@@ -1,0 +1,88 @@
+/* Import variables through angular.json's includePaths */
+/* No need for @import here */
+
+/* Base styles */
+body {
+  padding-top: 56px; /* For fixed navbar */
+  font-family: 'Poppins', sans-serif;
+  color: #2d3436;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar specific fixes */
+.navbar {
+  background-color: #2d3436 !important;
+   margin-bottom: 0 !important;
+}
+
+.offcanvas {
+  background-color: #2d3436;
+}
+.hero {
+  margin-top: 0;
+  padding-top: 80px; /* Adjust this based on your navbar height */
+   padding-bottom: 0 !important; /* Remove bottom padding */
+  margin-bottom: 0 !important;
+   position: relative;
+  z-index: 1;
+}
+main > section {
+  margin: 0;
+  padding: 0;
+}
+#about.section {
+  padding-top: 0 !important; /* Remove top padding */
+  margin-top: -1px; /* Pull up to meet hero section */
+}
+#about {
+  position: relative;
+  z-index: 2;
+  background: white; /* Or your about section background */
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/poppins/poppins-v23-latin-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/poppins/poppins-v23-latin-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/poppins/poppins-v23-latin-700.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/assets/fonts/playfair-display/playfair-display-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/assets/fonts/playfair-display/playfair-display-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/assets/fonts/playfair-display/playfair-display-v39-latin-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1.2;
+}

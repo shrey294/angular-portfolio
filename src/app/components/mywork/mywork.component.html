@@ -1,0 +1,48 @@
+<section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My <span>Work</span></h2>
+                <p class="section-subtitle">Featured projects</p>
+            </div>
+            <div class="project-filter mb-5">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+            </div>
+            <div class="row g-4 project-grid">
+                <!-- Project 1 -->
+                <div class="col-lg-4 col-md-6 project-item" *ngFor="let project of projectList"  data-category="fullstack">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img [src]="project.imageurl" [alt]="project.title" class="img-fluid">
+                            <div class="project-overlay">
+                                <a [href]="project.link" class="project-link"><i class="fas fa-link"></i></a>
+                                <a [href]="project.imageurl" class="project-preview" data-fancybox="gallery"><i class="fas fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>{{project.title}}</h3>
+                            <p>{{project.shortDescription}}</p>
+                            <div class="project-tags">
+                                <span *ngFor="let tech of project.stackPill.split(',')">{{tech}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                
+                <!-- Project 3 -->
+                
+                <!-- Project 4 -->
+                
+                <!-- Project 5 -->
+                
+                <!-- Project 6 -->
+                
+            </div>
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary">View All Projects</a>
+            </div>
+        </div>
+    </section>

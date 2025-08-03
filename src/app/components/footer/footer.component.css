@@ -1,0 +1,92 @@
+.footer {
+    background-color: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+}
+
+.logo-hover {
+    display: inline-block;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.logo-hover:hover {
+    transform: scale(1.1);
+    color: #2575fc !important;
+}
+
+.logo-hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #2575fc;
+    transition: width 0.3s ease;
+}
+
+.logo-hover:hover::after {
+    width: 100%;
+}
+
+.hover-effect {
+    position: relative;
+    padding-bottom: 3px;
+    transition: all 0.3s ease;
+}
+
+.hover-effect:hover {
+    color: #fff !important;
+}
+
+.hover-effect::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #2575fc;
+    transition: width 0.3s ease;
+}
+
+.hover-effect:hover::after {
+    width: 100%;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem; /* This replaces the mx-2 spacing */
+}
+
+.social-links a {
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+}
+
+.social-links a:hover {
+    background: #2575fc;
+    transform: translateY(-3px);
+    text-decoration: none !important;
+}

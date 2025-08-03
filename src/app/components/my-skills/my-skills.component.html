@@ -1,0 +1,23 @@
+<section id="skills" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My <span>Skills</span></h2>
+                <p class="section-subtitle">Technologies I work with</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3" *ngFor="let category of skillCategories">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <img [src]="category.imageurl" [alt]="category.title" style="width: 50px; height: 50px;">
+                        </div>
+                        <h3>{{category.title}}</h3>
+                        <div class="skill-tags">
+                            <span *ngFor="let skill of getSkillTags(category.pillText)">
+                                {{skill}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

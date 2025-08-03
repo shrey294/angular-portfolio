@@ -1,0 +1,18 @@
+:root {
+  --primary: #6c5ce7;
+  --primary-dark: #5649c0;
+  --secondary: #00cec9;
+  --dark: #2d3436;
+  --light: #f5f6fa;
+  --gray: #636e72;
+  --light-gray: #dfe6e9;
+  --white: #ffffff;
+  --black: #000000;
+  
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Playfair Display', serif;
+  
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s ease-in-out;
+}

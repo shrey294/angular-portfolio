@@ -1,0 +1,118 @@
+<section id="contact" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+      <p class="section-subtitle">Let's work together</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h5>Location</h5>
+              <p>{{contactData?.location}}</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h5>Email</h5>
+              <p>{{contactData?.email}}</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h5>Phone</h5>
+              <p>{{contactData?.phone}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="social-links mt-5">
+          <a [href]="contactData?.githubUrl" class="social-icon"><i class="fab fa-github"></i></a>
+          <a [href]="contactData?.linkedInUrl" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a [href]="contactData?.intsaUrl" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <!-- <a href="#" class="social-icon"><i class="fab fa-dribbble"></i></a> -->
+          <a [href]="'mailto:' + contactData?.email" class="social-icon">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <!-- <form id="contactForm" class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form> -->
+        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="contact-form" novalidate>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" name="name" [(ngModel)]="formData.name" class="form-control" placeholder="Your Name"
+                  required #name="ngModel">
+                <div *ngIf="name.invalid && name.touched" class="invalid-feedback d-block">
+                  Name is required.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="email" name="email" [(ngModel)]="formData.email" class="form-control"
+                  placeholder="Your Email" required email #email="ngModel">
+                <div *ngIf="email.invalid && email.touched" class="invalid-feedback d-block">
+                  Valid email is required.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" name="subject" [(ngModel)]="formData.subject" class="form-control" placeholder="Subject"
+              required #subject="ngModel">
+            <div *ngIf="subject.invalid && subject.touched" class="invalid-feedback d-block">
+              Subject is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea name="message" [(ngModel)]="formData.message" class="form-control" placeholder="Your Message"
+              rows="5" required #message="ngModel"></textarea>
+            <div *ngIf="message.invalid && message.touched" class="invalid-feedback d-block">
+              Message is required.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary mb-5" [disabled]="isSubmitting">
+            <span *ngIf="!isSubmitting">Send Message</span>
+            <span *ngIf="isSubmitting">
+              <span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
+              Sending...
+            </span>
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
