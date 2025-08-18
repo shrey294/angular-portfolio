@@ -27,7 +27,6 @@
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@nguniversal/express-engine": "^17.3.0",
     "bootstrap": "^5.3.7",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
