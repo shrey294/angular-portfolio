@@ -1,13 +1,10 @@
 {
   "version": 2,
-  "buildCommand": "npm run build:ssr",
-  "outputDirectory": "output",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/vercel-edge.ts" }
+  "builds": [
+    { "src": "dist/<your-app-name>/server/server.mjs", "use": "@vercel/node" },
+    { "src": "dist/<your-app-name>/browser/**", "use": "@vercel/static" }
   ],
-  "functions": {
-    "vercel-edge.ts": {
-      "includeFiles": "output/**"
-    }
-  }
+  "routes": [
+    { "src": "/.*", "dest": "dist/app-porfolio/server/server.mjs" }
+  ]
 }

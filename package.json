@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && ng run app-porfolio:server",
     "build:ssr": "ng build",
     "serve:ssr": "node dist/app-porfolio/server/server.mjs",
     "watch": "ng build --watch --configuration development",
