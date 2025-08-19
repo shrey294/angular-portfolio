@@ -1,5 +1,16 @@
 {
   "version": 2,
+  "buildCommand": "npm run build:ssr",
   "outputDirectory": "output",
-  "buildCommand": "npm run build:ssr"
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/vercel-edge.ts"
+    }
+  ],
+  "functions": {
+    "vercel-edge.ts": {
+      "includeFiles": "output/**"
+    }
+  }
 }
