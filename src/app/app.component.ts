@@ -21,7 +21,7 @@ interface LazySection {
   standalone: true,
   imports: [CommonModule, RouterOutlet, NavbarComponent, HeroComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
   title = 'portfolio';
