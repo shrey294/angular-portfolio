@@ -3,10 +3,7 @@
   "buildCommand": "npm run build:ssr",
   "outputDirectory": "output",
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/vercel-edge.ts"
-    }
+    { "source": "/(.*)", "destination": "/vercel-edge.ts" }
   ],
   "functions": {
     "vercel-edge.ts": {
