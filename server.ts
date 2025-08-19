@@ -1,56 +1,30 @@
-import { APP_BASE_HREF } from '@angular/common';
-import { CommonEngine } from '@angular/ssr';
 import express from 'express';
-import { fileURLToPath } from 'node:url';
-import { dirname, join, resolve } from 'node:path';
-import bootstrap from './src/main.server';
+import { join } from 'path';
+import { fileURLToPath } from 'url';
 
-// The Express app is exported so that it can be used by serverless Functions.
-export function app(): express.Express {
-  const server = express();
-  const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-  const browserDistFolder = resolve(serverDistFolder, '../browser');
-  const indexHtml = join(serverDistFolder, 'index.server.html');
+const app = express();
+const distFolder = join(process.cwd(), 'dist/app-porfolio/browser');
 
-  const commonEngine = new CommonEngine();
+app.use(express.static(distFolder, {
+  maxAge: '1y',
+  index: false
+}));
 
-  server.set('view engine', 'html');
-  server.set('views', browserDistFolder);
+app.get('*', (req, res) => {
+  res.sendFile(join(distFolder, 'index.html'));
+});
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
-  // Serve static files from /browser
-  server.get('*.*', express.static(browserDistFolder, {
-    maxAge: '1y'
-  }));
+const port = process.env['PORT'] || 4000;
 
-  // All regular routes use the Angular engine
-  server.get('*', (req, res, next) => {
-    const { protocol, originalUrl, baseUrl, headers } = req;
+// ✅ Cross-compatible check for ESM
+const isMainModule =
+  typeof process !== 'undefined' &&
+  process.argv[1] === fileURLToPath(import.meta.url);
 
-    commonEngine
-      .render({
-        bootstrap,
-        documentFilePath: indexHtml,
-        url: `${protocol}://${headers.host}${originalUrl}`,
-        publicPath: browserDistFolder,
-        providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
-      })
-      .then((html) => res.send(html))
-      .catch((err) => next(err));
-  });
-
-  return server;
-}
-
-function run(): void {
-  const port = process.env['PORT'] || 4000;
-
-  // Start up the Node server
-  const server = app();
-  server.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
+if (isMainModule) {
+  app.listen(port, () => {
+    console.log(`✅ Angular Universal server running at http://localhost:${port}`);
   });
 }
 
-run();
+export default app;
