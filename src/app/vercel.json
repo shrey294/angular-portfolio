@@ -1,19 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "dist/app_porfolio/server/main.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "dist/app_porfolio/**/*",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/dist/app_porfolio/server/main.js"
-    }
-  ]
+  "outputDirectory": "output",
+  "buildCommand": "npm run build:ssr"
 }
