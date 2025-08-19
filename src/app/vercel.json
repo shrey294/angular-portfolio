@@ -2,18 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/app-porfolio/server/server.mjs",
+      "src": "api/server.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "dist/app-porfolio/browser/**",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/.*",
-      "dest": "dist/app-porfolio/server/server.mjs"
+      "dest": "api/server.js"
     }
   ]
 }
