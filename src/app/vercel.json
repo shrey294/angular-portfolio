@@ -1,8 +1,8 @@
 {
   "version": 2,
   "builds": [
-    { "src": "dist/<your-app-name>/server/server.mjs", "use": "@vercel/node" },
-    { "src": "dist/<your-app-name>/browser/**", "use": "@vercel/static" }
+    { "src": "dist/app-porfolio/server/server.mjs", "use": "@vercel/node" },
+    { "src": "dist/app-porfolio/browser/**", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/.*", "dest": "dist/app-porfolio/server/server.mjs" }
