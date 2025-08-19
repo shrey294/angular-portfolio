@@ -2,14 +2,15 @@
   "name": "app-porfolio",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build && ng run app-porfolio:server",
-    "build:ssr": "ng build",
-    "serve:ssr": "node dist/app-porfolio/server/server.mjs",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
+  "ng": "ng",
+  "start": "ng serve",
+  "build": "ng build",
+  "build:ssr": "ng build && ng run app-porfolio:server",
+  "serve:ssr": "node dist/app-porfolio/server/server.mjs",
+  "vercel-build": "npm run build:ssr",
+  "watch": "ng build --watch --configuration development",
+  "test": "ng test"
+},
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.3.0",
