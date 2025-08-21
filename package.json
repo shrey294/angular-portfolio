@@ -3,13 +3,10 @@
   "version": "0.0.0",
   "scripts": {
   "ng": "ng",
-   "build": "npm run build:ssr",
   "start": "node dist/app-porfolio/server/main.js",
-  "build:ssr": "npx ng build --configuration production && npx ng run app-porfolio:server:production",
-  "serve:ssr": "node dist/app-porfolio/server/main.js",
-  "vercel-build": "npm run build:ssr",
-  "watch": "ng build --watch --configuration development",
-  "test": "ng test"
+  "build": "npm run build:ssr",
+  "build:ssr": "ng build --configuration production && ng run app-porfolio:server:production",
+  "serve:ssr": "node dist/app-porfolio/server/main.js"
 },
   "private": true,
   "dependencies": {
