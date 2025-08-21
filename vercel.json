@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "buildCommand": "npm run build:ssr",
   "builds": [
     {
       "src": "dist/app-porfolio/server/main.js",
@@ -15,6 +16,5 @@
       "src": "/.*",
       "dest": "dist/app-porfolio/server/main.js"
     }
-  ],
-  "buildCommand": "npm run build:ssr"
+  ]
 }
