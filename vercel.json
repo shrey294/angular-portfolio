@@ -1,19 +1,12 @@
 {
   "version": 2,
+  "buildCommand": "npm run build:ssr",
+  "outputDirectory": "dist/app-porfolio",
   "builds": [
-    {
-      "src": "dist/angular-portfolio/server/main.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "dist/angular-portfolio/browser/**",
-      "use": "@vercel/static"
-    }
+    { "src": "dist/app-porfolio/server/main.js", "use": "@vercel/node" },
+    { "src": "dist/app-porfolio/browser/**", "use": "@vercel/static" }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "dist/angular-portfolio/server/main.js"
-    }
+    { "src": "/(.*)", "dest": "dist/app-porfolio/server/main.js" }
   ]
 }
