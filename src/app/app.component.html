@@ -28,21 +28,37 @@
 
   <router-outlet></router-outlet>
 </main> -->
+<div *ngIf="isLoading" class="loader-overlay">
+  <div class="spinner"></div>
+</div>
+<div [class.hidden]="isLoading">
 <app-navbar></app-navbar>
 <app-hero></app-hero>
 
 <main>
   <section id="home"></section>
 
-  <!-- ✅ Only one iteration of lazySections -->
-  <ng-container *ngFor="let section of lazySections">
-    <section [id]="section.id" #lazySection>
-      <ng-container *ngIf="section.loaded" [ngComponentOutlet]="section.component"></ng-container>
-      <div *ngIf="!section.loaded" class="placeholder">
-        Loading {{ section.id }} section…
-      </div>
-    </section>
-  </ng-container>
+  <!-- All sections are eagerly loaded below -->
+  <section id="about">
+    <app-about></app-about>
+  </section>
+
+  <section id="skills">
+    <app-my-skills></app-my-skills>
+  </section>
+
+  <section id="mywork">
+    <app-mywork></app-mywork>
+  </section>
+
+  <section id="getintouch">
+    <app-getintouch></app-getintouch>
+  </section>
+
+  <section id="footer">
+    <app-footer></app-footer>
+  </section>
 
   <router-outlet></router-outlet>
 </main>
+</div>
