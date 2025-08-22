@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://your-domain.com/</loc>
+    <loc>https://angular-portfolio-v59d.onrender.com/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://your-domain.com/#about</loc>
+    <loc>https://angular-portfolio-v59d.onrender.com/#about</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://your-domain.com/#skills</loc>
+    <loc>https://angular-portfolio-v59d.onrender.com/#skills</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://your-domain.com/#projects</loc>
+    <loc>https://angular-portfolio-v59d.onrender.com/#projects</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://your-domain.com/#contact</loc>
+    <loc>https://angular-portfolio-v59d.onrender.com/#contact</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
