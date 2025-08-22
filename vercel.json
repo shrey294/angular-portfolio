@@ -2,14 +2,23 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/app-porfolio/server/main.js",
-      "use": "@vercel/node"
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["dist/**"]
+      }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/dist/app-porfolio/server/main.js"
+      "dest": "dist/app-porfolio/server/main.js"
     }
-  ]
+  ],
+  "functions": {
+    "dist/app-porfolio/server/main.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  }
 }
