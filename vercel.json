@@ -9,13 +9,11 @@
       }
     }
   ],
-  "functions": {
-    "dist/app-porfolio/server/main.js": {}
-  },
+  
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/app-porfolio/browser/server/main.js"
+      "dest": "dist/app-porfolio/browser/server/main.js" 
     }
   ]
 }
