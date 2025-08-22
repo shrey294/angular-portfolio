@@ -14,11 +14,5 @@
       "src": "/(.*)",
       "dest": "dist/app-porfolio/server/main.js"
     }
-  ],
-  "functions": {
-    "dist/app-porfolio/server/main.js": {
-      "memory": 1024,
-      "maxDuration": 60
-    }
-  }
+  ]
 }
